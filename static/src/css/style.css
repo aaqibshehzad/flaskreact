@@ -1,0 +1,52 @@
+/* hide y axis */
+.page-header {
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.axis .tick line,
+.axis path {
+  display: none;
+}
+.title {
+  font-size: 1.6rem;
+  fill: #4f4f4f;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  fill: #aaaaaa;
+  font-weight: 300;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #949494;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.axis text {
+  fill: #383838;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.legendWrapper {
+  font-size: 0.8rem;
+  font-weight: 300;
+  opacity: 1;
+}
