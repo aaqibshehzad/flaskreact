@@ -1,7 +1,7 @@
 # server.py
 from flask import Flask, render_template, jsonify
 
-app = Flask(__name__, static_folder="../static/dist", template_folder="../static")
+app = Flask(__name__, static_folder="../static/dist", template_folder="../static/dist")
 
 @app.route("/")
 def index():

@@ -12,7 +12,8 @@ class App extends React.Component {
     });
   }
   render() {
-    return <p> Hello React!</p>;
+    const { data } = this.state;
+    return <p> hello g {data}</p>;
   }
 }
 export default App;

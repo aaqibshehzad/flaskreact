@@ -1,8 +1,10 @@
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const config = {
-  entry: __dirname + "/js/index.js",
+  entry: __dirname + "/src/index.js",
   output: {
     path: __dirname + "/dist",
-    filename: "bundle.js"
+    filename: "js/bundle.js",
+    publicPath: "/dist"
   },
   resolve: {
     extensions: [".js", ".jsx", ".css"]
@@ -15,6 +17,11 @@ const config = {
         use: { loader: "babel-loader" }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "src/public/index.html"
+    })
+  ]
 };
 module.exports = config;
