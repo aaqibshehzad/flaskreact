@@ -1,10 +1,12 @@
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 const config = {
   entry: __dirname + "/src/index.js",
   output: {
     path: __dirname + "/dist",
     filename: "js/bundle.js",
-    publicPath: "/dist"
+    publicPath: "/dist/"
   },
   resolve: {
     extensions: [".js", ".jsx", ".css"]
@@ -22,12 +24,13 @@ const config = {
           {
             loader: "file-loader",
             options: {
-              name: "css/[name].[ext]",
-              publicPath: "./dist/css"
+              outputPath: "css/",
+              name: "[name].[ext]"
             }
           },
           {
-            loader: "extract-loader"
+            loader: "extract-loader",
+            options: {}
           },
           {
             loader: "css-loader",
@@ -44,8 +47,8 @@ const config = {
           {
             loader: "file-loader",
             options: {
-              name: "images/[name].[ext]",
-              publicPath: "./dist"
+              outputPath: "images/",
+              name: "[name].[ext]"
             }
           },
           {
@@ -62,8 +65,14 @@ const config = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin("dist", {}),
     new HtmlWebPackPlugin({
       template: "src/public/index.html"
+    }),
+    new HtmlWebpackIncludeAssetsPlugin({
+      assets: ["/css/style.css"],
+      append: false,
+      publicPath: "/dist"
     })
   ]
 };
