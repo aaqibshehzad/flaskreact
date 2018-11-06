@@ -1,5 +1,6 @@
 virtualenv env
-%~dp0\env/scripts/activate
+call %~dp0\env/scripts/activate
 pip install -r requirements.txt
 cd static
-npm install
+call npm install
+cd..
