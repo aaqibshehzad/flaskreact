@@ -4,21 +4,22 @@ require("./css/style.css");
 import HeaderBackgroundImage from "./images/header.jpg";
 
 class App extends React.Component {
-  state = { data: null };
+  state = { state_data: null };
 
   componentWillMount() {
     axios.post(`/hello`).then(response => {
       console.log(response);
       this.setState({
-        data: response.data
+        state_data: response.data
       });
     });
   }
   render() {
-    const { data } = this.state;
+    const { state_data } = this.state;
     return (
       <div>
-        <p> hello gi {data}</p>
+        <p> Hello from State of {state_data}</p>
+        <p>{data} From Flask itself</p>
       </div>
     );
   }
