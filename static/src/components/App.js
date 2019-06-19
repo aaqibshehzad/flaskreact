@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-require("./css/style.css");
-import HeaderBackgroundImage from "./images/header.jpg";
+require("../css/style.css");
+import HeaderBackgroundImage from "../images/header.jpg";
 
 class App extends React.Component {
   state = { state_data: null };
