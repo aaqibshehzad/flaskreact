@@ -17,7 +17,7 @@ const config = {
   },
   output: {
     path: BUILD_DIR,
-    filename: "js/[name].bundle.js",
+    filename: "js/[name].[hash].bundle.js",
     publicPath: "/"
   },
   resolve: {
@@ -85,6 +85,8 @@ const config = {
     new webpack.EnvironmentPlugin(["NODE_ENV", "DEBUG"]),
     new HtmlWebPackPlugin({
       title: "Flask React",
+      hash: true,
+      inject: true,
       meta: {
         charset: "utf-8",
         viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
