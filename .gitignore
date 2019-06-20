@@ -1,7 +1,7 @@
 #Installed libraries and stats file
-/static/node_modules
-/static/stats.json
-/static/package-lock.json
+/app/node_modules
+/app/stats.json
+/app/package-lock.json
 
 #Python virtual env files and caches
 env
