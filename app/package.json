@@ -7,7 +7,7 @@
     "build": "webpack -p --progress --config config/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:stats": "webpack --env production --config config/webpack.config.prod.js --json > stats.json",
-    "dev": "start python ../api/server.py && start webpack --progress -d --config config/webpack.config.dev.js --watch"
+    "dev": "cd.. && start flask run && cd app && start webpack --progress -d --config config/webpack.config.dev.js --watch"
   },
   "browserslist": [
     "> .05%"
